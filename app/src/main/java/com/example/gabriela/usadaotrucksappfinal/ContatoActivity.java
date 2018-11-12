@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class ContatoActivity extends Activity implements AdapterView.OnItemSelectedListener {
 
     Spinner spinner;
-
+//teste
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
