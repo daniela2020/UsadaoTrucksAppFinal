@@ -1,5 +1,6 @@
 package com.example.gabriela.usadaotrucksappfinal;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +11,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ContatoActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class ContatoActivity extends Activity implements AdapterView.OnItemSelectedListener {
 
     Spinner spinner;
 
@@ -23,14 +24,19 @@ public class ContatoActivity extends AppCompatActivity implements AdapterView.On
 
       ArrayAdapter adapter=ArrayAdapter.createFromResource(this,R.array.selecione,android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);
-        spinner.setOnItemClickListener(this);
+        spinner.setOnItemSelectedListener(this);
     }
 
     @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Toast.makeText(this,"Voce selecionou",Toast.LENGTH_SHORT).show();
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+       // Toast.makeText(this,"Voce selecionou",Toast.LENGTH_SHORT).show();
         TextView myText=(TextView) view;
         Toast.makeText(this,"Você selecionou"+myText.getText(),Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
 
